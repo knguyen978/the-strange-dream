@@ -10,7 +10,7 @@ body{
   height:100vh;
   background:
     linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.9)),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+    url("bg.jpg"); /* đổi bg.jpg thành ảnh của bạn */
   background-size:cover;
   background-position:center;
   color:white;
@@ -22,26 +22,31 @@ body{
 
 .container{
   text-align:center;
+  max-width:700px;
+  padding:20px;
 }
 
 h1{
   font-size:48px;
   letter-spacing:3px;
+  margin-bottom:20px;
 }
 
-p{
-  opacity:0.7;
-  margin-bottom:30px;
+.description{
+  font-size:16px;
+  opacity:0.75;
+  line-height:1.6;
+  margin-bottom:35px;
 }
 
 .links a{
   display:inline-block;
-  margin:0 10px;
+  margin:8px;
   padding:12px 22px;
   border:1px solid white;
   color:white;
   text-decoration:none;
-  transition:.3s;
+  transition:0.3s;
 }
 
 .links a:hover{
@@ -54,7 +59,14 @@ p{
 <body>
   <div class="container">
     <h1>THE STRANGE DREAM</h1>
-    <p>The Strange Dream is a world where dreams and nightmares become one.A mysterious disaster turns everything familiar into horror, and the only way to survive is to awaken from this dream.</p>
+
+    <div class="description">
+      <p>
+        <strong>The Strange Dream</strong> is a world where dreams and nightmares become one.
+        A mysterious disaster turns everything familiar into horror, and the only way to survive
+        is to awaken from this dream.
+      </p>
+    </div>
 
     <div class="links">
       <a href="https://twitter.com/thestrangedrea" target="_blank">Twitter</a>
@@ -64,5 +76,3 @@ p{
   </div>
 </body>
 </html>
-
-
