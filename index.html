@@ -18,7 +18,7 @@ body{
   min-height:100vh;
   background:
     linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.95)),
-    url("bg.jpg"); /* ảnh sương mù / xác chết mờ */
+    url("bg.jpg"); /* đổi thành ảnh sương mù / xác chết */
   background-size:cover;
   background-position:center;
   background-attachment: fixed;
@@ -57,7 +57,7 @@ body{
   backdrop-filter: blur(2px);
 }
 
-/* TITLE */
+/* ===== TITLE ===== */
 h1{
   font-family:'Cinzel', serif;
   font-size:56px;
@@ -69,7 +69,7 @@ h1{
     0 0 30px rgba(180,180,180,0.08);
 }
 
-/* DESCRIPTION */
+/* ===== DESCRIPTION ===== */
 .description{
   font-size:16px;
   line-height:1.7;
@@ -77,23 +77,37 @@ h1{
   margin-bottom:45px;
 }
 
-/* LINKS */
+/* ===== LINKS – STYLE 2 (NO BOX, DREAMY) ===== */
 .links a{
-  display:inline-block;
-  margin:8px;
-  padding:12px 26px;
-  border:1px solid rgba(255,255,255,0.6);
-  color:#eaeaea;
-  text-decoration:none;
-  letter-spacing:1px;
+  position: relative;
+  margin: 0 18px;
+  padding: 6px 0;
+  color: #cfcfcf;
+  text-decoration: none;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  transition: 0.3s ease;
+}
+
+.links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:1px;
+  background:#e0e0e0;
+  opacity:0.6;
   transition:0.3s ease;
-  font-size:14px;
 }
 
 .links a:hover{
-  background:#eaeaea;
-  color:#000;
-  box-shadow:0 0 12px rgba(255,255,255,0.25);
+  color:#ffffff;
+  text-shadow:0 0 8px rgba(255,255,255,0.35);
+}
+
+.links a:hover::after{
+  width:100%;
 }
 </style>
 </head>
@@ -118,4 +132,3 @@ h1{
   </div>
 </body>
 </html>
-
