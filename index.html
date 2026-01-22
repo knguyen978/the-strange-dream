@@ -4,54 +4,96 @@
 <meta charset="UTF-8">
 <title>The Strange Dream</title>
 
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
+/* ===== GLOBAL ===== */
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   margin:0;
-  height:100vh;
+  min-height:100vh;
   background:
-    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.9)),
-    url("bg.jpg"); /* đổi bg.jpg thành ảnh của bạn */
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.95)),
+    url("bg.jpg"); /* ảnh sương mù / xác chết mờ */
   background-size:cover;
   background-position:center;
-  color:white;
-  font-family:Arial, sans-serif;
+  background-attachment: fixed;
+
+  color:#e5e5e5;
+  font-family:'Inter', sans-serif;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
+  overflow-y:auto;
+  overflow-x:hidden;
 }
 
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{
+  width:6px;
+}
+::-webkit-scrollbar-track{
+  background:#000;
+}
+::-webkit-scrollbar-thumb{
+  background:#444;
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background:#666;
+}
+
+/* ===== CONTENT ===== */
 .container{
   text-align:center;
-  max-width:700px;
-  padding:20px;
+  max-width:720px;
+  padding:30px;
+  backdrop-filter: blur(2px);
 }
 
+/* TITLE */
 h1{
-  font-size:48px;
-  letter-spacing:3px;
-  margin-bottom:20px;
+  font-family:'Cinzel', serif;
+  font-size:56px;
+  letter-spacing:4px;
+  margin-bottom:25px;
+  color:#f2f2f2;
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.15),
+    0 0 30px rgba(180,180,180,0.08);
 }
 
+/* DESCRIPTION */
 .description{
   font-size:16px;
-  opacity:0.75;
-  line-height:1.6;
-  margin-bottom:35px;
+  line-height:1.7;
+  color:#bdbdbd;
+  margin-bottom:45px;
 }
 
+/* LINKS */
 .links a{
   display:inline-block;
   margin:8px;
-  padding:12px 22px;
-  border:1px solid white;
-  color:white;
+  padding:12px 26px;
+  border:1px solid rgba(255,255,255,0.6);
+  color:#eaeaea;
   text-decoration:none;
-  transition:0.3s;
+  letter-spacing:1px;
+  transition:0.3s ease;
+  font-size:14px;
 }
 
 .links a:hover{
-  background:white;
-  color:black;
+  background:#eaeaea;
+  color:#000;
+  box-shadow:0 0 12px rgba(255,255,255,0.25);
 }
 </style>
 </head>
@@ -62,7 +104,7 @@ h1{
 
     <div class="description">
       <p>
-       <strong>The Strange Dream</strong> is a world where dreams and nightmares become one.
+        <strong>The Strange Dream</strong> is a world where dreams and nightmares become one.
         A mysterious disaster turns everything familiar into horror,
         and the only way to survive is to awaken from this dream.
       </p>
