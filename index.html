@@ -9,167 +9,180 @@
 
 <style>
 /* ===== GLOBAL ===== */
-html{
+html {
   scroll-behavior: smooth;
 }
 
-body{
-  margin:0;
-  min-height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.95)),
-    url("bg.jpg"); /* background sương mù */
-  background-size:cover;
-  background-position:center;
-  background-attachment: fixed;
-
-  color:#e5e5e5;
-  font-family:'Inter', sans-serif;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  overflow-y:auto;
-  overflow-x:hidden;
+body {
+  margin: 0;
+  background: #000;
+  color: #e5e5e5;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
 /* ===== SCROLLBAR ===== */
-::-webkit-scrollbar{
-  width:6px;
+::-webkit-scrollbar {
+  width: 6px;
 }
-::-webkit-scrollbar-track{
-  background:#000;
+::-webkit-scrollbar-track {
+  background: #000;
 }
-::-webkit-scrollbar-thumb{
-  background:#444;
-  border-radius:10px;
-}
-::-webkit-scrollbar-thumb:hover{
-  background:#666;
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
 }
 
-/* ===== LOGO ===== */
-.logo{
+/* ===== LOGO FIXED ===== */
+.logo {
   position: fixed;
-  top: 20px;
+  top: 24px;
   left: 28px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  z-index: 999;
+  gap: 12px;
+  z-index: 100;
 }
 
-.logo img{
-  width: 42px;
-  height: 42px;
-  object-fit: cover;
-  border-radius: 50%;
-  opacity: 0.85;
-  filter: grayscale(45%) contrast(115%);
-  box-shadow:
-    0 0 14px rgba(0,0,0,0.85),
-    0 0 6px rgba(255,255,255,0.15);
+.logo img {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.25));
 }
 
-.logo span{
+.logo span {
   font-family: 'Cinzel', serif;
-  font-size: 14px;
   letter-spacing: 2px;
-  color: #e6e6e6;
-  opacity: 0.9;
-  text-shadow: 0 0 8px rgba(255,255,255,0.15);
+  font-size: 14px;
+  color: #f2f2f2;
+}
+
+/* ===== HERO (ENDFIELD STYLE) ===== */
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.95)),
+    url("bg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 80px;
+  letter-spacing: 6px;
+  margin: 0;
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.15),
+    0 0 40px rgba(180,180,180,0.08);
+}
+
+.hero p {
+  margin-top: 18px;
+  font-size: 18px;
+  color: #cfcfcf;
+  max-width: 600px;
+}
+
+.scroll {
+  margin-top: 40px;
+  font-size: 18px;
+  opacity: 0.7;
+  animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
 }
 
 /* ===== CONTENT ===== */
-.container{
-  text-align:center;
-  max-width:720px;
-  padding:30px;
-  backdrop-filter: blur(2px);
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 120px 30px;
+  text-align: center;
 }
 
-/* ===== TITLE ===== */
-h1{
-  font-family:'Cinzel', serif;
-  font-size:56px;
-  letter-spacing:4px;
-  margin-bottom:25px;
-  color:#f2f2f2;
-  text-shadow:
-    0 0 10px rgba(255,255,255,0.15),
-    0 0 30px rgba(180,180,180,0.08);
+.container h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 42px;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
 }
 
-/* ===== DESCRIPTION ===== */
-.description{
-  font-size:16px;
-  line-height:1.7;
-  color:#bdbdbd;
-  margin-bottom:45px;
+.description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #bdbdbd;
 }
 
-/* ===== LINKS – STYLE DREAM (NO BOX) ===== */
-.links a{
-  position: relative;
-  margin: 0 18px;
-  padding: 6px 0;
-  color: #cfcfcf;
+/* ===== LINKS ===== */
+.links {
+  margin-top: 50px;
+}
+
+.links a {
+  display: inline-block;
+  margin: 8px;
+  padding: 12px 28px;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #eaeaea;
   text-decoration: none;
-  font-size: 15px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   transition: 0.3s ease;
+  font-size: 14px;
 }
 
-.links a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:0%;
-  height:1px;
-  background:#e0e0e0;
-  opacity:0.6;
-  transition:0.3s ease;
-}
-
-.links a:hover{
-  color:#ffffff;
-  text-shadow:0 0 8px rgba(255,255,255,0.35);
-}
-
-.links a:hover::after{
-  width:100%;
+.links a:hover {
+  background: #eaeaea;
+  color: #000;
+  box-shadow: 0 0 12px rgba(255,255,255,0.25);
 }
 </style>
 </head>
 
 <body>
 
-  <!-- LOGO -->
-  <header class="logo">
-    <img src="logo.png" alt="The Strange Dream Logo">
-    <span>THE STRANGE DREAM</span>
-  </header>
+<!-- LOGO -->
+<div class="logo">
+  <img src="logo.png" alt="Zombie Logo">
+  <span>THE STRANGE DREAM</span>
+</div>
 
-  <!-- MAIN CONTENT -->
-  <div class="container">
+<!-- HERO -->
+<section class="hero">
+  <div>
     <h1>THE STRANGE DREAM</h1>
-
-    <div class="description">
-      <p>
-        <strong>The Strange Dream</strong> is a world where dreams and nightmares become one.
-        A mysterious disaster turns everything familiar into horror,
-        and the only way to survive is to awaken from this dream.
-      </p>
-    </div>
-
-    <div class="links">
-      <a href="https://twitter.com/thestrangedrea" target="_blank">Twitter</a>
-      <a href="https://youtube.com/@thestrangedreamofficial" target="_blank">YouTube</a>
-      <a href="https://discord.gg/ZARVXqY6dM" target="_blank">Discord</a>
-    </div>
+    <p>
+      A world where dreams and nightmares collapse into one.
+      The only escape… is to awaken.
+    </p>
+    <div class="scroll">▼ Scroll</div>
   </div>
+</section>
+
+<!-- CONTENT -->
+<div class="container">
+  <h2>ABOUT THE GAME</h2>
+
+  <div class="description">
+    <p>
+      <strong>The Strange Dream</strong> is a horror survival experience
+      where reality fractures after a mysterious disaster.
+      Familiar places decay, memories twist, and something follows you
+      through the dream.
+    </p>
+  </div>
+
+  <div class="links">
+    <a href="https://twitter.com/thestrangedrea" target="_blank">Twitter</a>
+    <a href="https://youtube.com/@thestrangedreamofficial" target="_blank">YouTube</a>
+    <a href="https://discord.gg/ZARVXqY6dM" target="_blank">Discord</a>
+  </div>
+</div>
 
 </body>
 </html>
