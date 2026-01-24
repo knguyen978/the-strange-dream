@@ -33,31 +33,7 @@ body {
   border-radius: 10px;
 }
 
-/* ===== LOGO FIXED ===== */
-.logo {
-  position: fixed;
-  top: 24px;
-  left: 28px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 100;
-}
-
-.logo img {
-  width: 48px;
-  height: 48px;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.25));
-}
-
-.logo span {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 2px;
-  font-size: 14px;
-  color: #f2f2f2;
-}
-
-/* ===== HERO (ENDFIELD STYLE) ===== */
+/* ===== HERO ===== */
 .hero {
   height: 100vh;
   background:
@@ -83,7 +59,7 @@ body {
   margin-top: 18px;
   font-size: 18px;
   color: #cfcfcf;
-  max-width: 600px;
+  max-width: 620px;
 }
 
 .scroll {
@@ -119,38 +95,45 @@ body {
   color: #bdbdbd;
 }
 
-/* ===== LINKS ===== */
+/* ===== LINKS : GLOW STYLE ===== */
 .links {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 .links a {
   display: inline-block;
-  margin: 8px;
-  padding: 12px 28px;
-  border: 1px solid rgba(255,255,255,0.6);
+  margin: 10px 14px;
+  padding: 14px 36px;
+
   color: #eaeaea;
   text-decoration: none;
-  letter-spacing: 1px;
-  transition: 0.3s ease;
   font-size: 14px;
+  letter-spacing: 2px;
+
+  border: 1px solid rgba(200,200,200,0.25);
+  background: rgba(255,255,255,0.03);
+
+  backdrop-filter: blur(6px);
+  border-radius: 40px;
+
+  box-shadow: 0 0 0 rgba(255,255,255,0);
+  transition: all 0.35s ease;
 }
 
 .links a:hover {
-  background: #eaeaea;
-  color: #000;
-  box-shadow: 0 0 12px rgba(255,255,255,0.25);
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.9);
+
+  box-shadow:
+    0 0 14px rgba(255,255,255,0.35),
+    0 0 30px rgba(180,180,180,0.15);
+
+  transform: translateY(-2px);
 }
 </style>
 </head>
 
 <body>
-
-<!-- LOGO -->
-<div class="logo">
-  <img src="logo.png" alt="Zombie Logo">
-  <span>THE STRANGE DREAM</span>
-</div>
 
 <!-- HERO -->
 <section class="hero">
