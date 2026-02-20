@@ -2,208 +2,113 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The Strange Dream</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<title>The Strange Dream</title>
 
 <style>
-/* ===== GLOBAL ===== */
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
+  padding: 0;
   background: #000;
-  color: #e5e5e5;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-}
-
-/* ===== SCROLLBAR ===== */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #000;
-}
-::-webkit-scrollbar-thumb {
-  background: #444;
-  border-radius: 10px;
-}
-
-/* ===== LOGO ===== */
-.logo {
-  position: fixed;
-  top: 22px;
-  left: 26px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 100;
-}
-
-.logo img {
-  width: 42px;
-  height: 42px;
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.25));
-}
-
-.logo span {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 2px;
-  font-size: 13px;
-  opacity: 0.9;
-}
-
-/* ===== HERO CENTER FIX (PC + MOBILE) ===== */
-.hero {
-  min-height: 100svh;
-  background:
-    linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.95)),
-    url("bg.jpg") center / cover no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: white;
+  font-family: "Times New Roman", serif;
   text-align: center;
+}
 
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+header h1 {
+  font-size: 20px;
+  letter-spacing: 4px;
+  margin-left: 10px;
+}
+
+/* ABOUT SECTION */
+.about {
+  margin-top: 25vh;
   padding: 0 20px;
 }
 
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  transform: translateY(-4%);
-}
-
-/* ===== TITLE ===== */
-.hero h1 {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(48px, 7vw, 96px);
-  line-height: 1.15;
-  letter-spacing: 5px;
-  margin: 0;
-
-  text-shadow:
-    0 0 12px rgba(255,255,255,0.15),
-    0 0 40px rgba(200,200,200,0.08);
-}
-
-/* ===== SUB TEXT ===== */
-.hero p {
-  margin-top: 18px;
-  max-width: 520px;
-  font-size: clamp(14px, 1.2vw, 18px);
-  opacity: 0.75;
-}
-
-/* ===== SCROLL ===== */
-.scroll {
-  margin-top: 34px;
-  font-size: 14px;
-  opacity: 0.6;
-  animation: bounce 1.8s infinite;
-}
-
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
-}
-
-/* ===== CONTENT ===== */
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 120px 30px;
-  text-align: center;
-}
-
-.container h2 {
-  font-family: 'Cinzel', serif;
+.about h2 {
   font-size: 42px;
-  letter-spacing: 3px;
-  margin-bottom: 30px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
 }
 
-.description {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #bdbdbd;
+.about p {
+  max-width: 700px;
+  margin: auto;
+  color: #ccc;
+  line-height: 1.6;
 }
 
-/* ===== LINKS (GLOW STYLE) ===== */
-.links {
-  margin-top: 50px;
+/* SOCIAL BUTTONS */
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
 
-.links a {
-  display: inline-block;
-  margin: 10px;
-  padding: 14px 34px;
-
-  border: 1px solid rgba(255,255,255,0.6);
-  color: #fff;
+.btn {
+  padding: 12px 32px;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
   text-decoration: none;
-  letter-spacing: 1px;
-  font-size: 14px;
-
-  transition: 0.35s ease;
+  font-size: 16px;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
 }
 
-.links a:hover {
+.btn:hover {
+  border-color: #9ecbff;
+  color: #9ecbff;
   box-shadow:
-    0 0 10px rgba(255,255,255,0.4),
-    0 0 30px rgba(255,255,255,0.15);
+    0 0 10px #9ecbff,
+    0 0 20px rgba(158,203,255,0.6);
   transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .about h2 {
+    font-size: 28px;
+  }
+
+  .btn {
+    width: 200px;
+    text-align: center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOGO -->
-<div class="logo">
-  <img src="logo.png" alt="Logo">
-  <span>THE STRANGE DREAM</span>
-</div>
+<header>
+  <h1>THE STRANGE DREAM</h1>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>THE STRANGE DREAM</h1>
-    <p>
-      A world where dreams and nightmares collapse into one.
-      The only escape… is to awaken.
-    </p>
-    <div class="scroll">▼ Scroll</div>
+<section class="about">
+  <h2>ABOUT THE GAME</h2>
+  <p>
+    The Strange Dream is a horror survival experience where reality fractures after a mysterious disaster.
+    Familiar places decay, memories twist, and something follows you through the dream.
+  </p>
+
+  <div class="socials">
+    <a href="https://x.com/thestrangedrea" target="_blank" class="btn">Twitter</a>
+    <a href="https://www.youtube.com/channel/UCpa67gaD_-CoFDXHSpe48jg" target="_blank" class="btn">YouTube</a>
+    <a href="https://discord.gg/ZARVXqY6dM" target="_blank" class="btn">Discord</a>
   </div>
 </section>
-
-<!-- CONTENT -->
-<div class="container">
-  <h2>ABOUT THE GAME</h2>
-
-  <div class="description">
-    <p>
-      <strong>The Strange Dream</strong> is a horror survival experience
-      where reality fractures after a mysterious disaster.
-      Familiar places decay, memories twist, and something follows you
-      through the dream.
-    </p>
-  </div>
-
-  <div class="links">
-    <a href="#">Twitter</a>
-    <a href="#">YouTube</a>
-    <a href="#">Discord</a>
-  </div>
-</div>
 
 </body>
 </html>
