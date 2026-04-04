@@ -48,18 +48,20 @@ header h1 {
 .socials {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 30px;
   flex-wrap: wrap;
   margin-top: 40px;
 }
 
+/* FIX BUTTON */
 .btn {
   padding: 12px 32px;
-  border: none;
+  border: 1px solid rgba(255,255,255,0.3);
   color: white;
   text-decoration: none;
-  font-size: 16px
+  font-size: 16px;
+  transition: 0.3s;
+}
 
 .btn:hover {
   border-color: #9ecbff;
@@ -70,7 +72,7 @@ header h1 {
   transform: translateY(-2px);
 }
 
-/* CONTACT SECTION */
+/* CONTACT */
 .contact {
   margin-top: 120px;
   padding: 40px 20px;
@@ -95,6 +97,7 @@ header h1 {
   gap: 15px;
 }
 
+/* INPUT GLOW */
 .contact input,
 .contact textarea {
   background: #111;
@@ -102,13 +105,23 @@ header h1 {
   padding: 12px;
   color: white;
   font-family: inherit;
+  transition: 0.3s;
 }
 
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: #9ecbff;
+  box-shadow: 0 0 8px rgba(158,203,255,0.6);
+}
+
+/* TEXTAREA */
 .contact textarea {
   resize: none;
   height: 120px;
 }
 
+/* BUTTON GLOW */
 .contact button {
   padding: 12px;
   border: 1px solid rgba(255,255,255,0.4);
@@ -121,7 +134,9 @@ header h1 {
 .contact button:hover {
   border-color: #9ecbff;
   color: #9ecbff;
-  box-shadow: 0 0 10px #9ecbff;
+  box-shadow:
+    0 0 10px #9ecbff,
+    0 0 20px rgba(158,203,255,0.5);
 }
 
 /* FOOTER */
@@ -135,9 +150,7 @@ footer {
 .footer-links {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 15px;
-  letter-spacing: 1px;
 }
 
 .footer-links a {
@@ -161,7 +174,6 @@ footer {
 
   .btn {
     width: 200px;
-    text-align: center;
   }
 }
 </style>
@@ -181,13 +193,13 @@ footer {
   </p>
 
   <div class="socials">
-    <a href="https://x.com/thestrangedrea" target="_blank" class="btn">Twitter</a>
-    <a href="https://www.youtube.com/channel/UCpa67gaD_-CoFDXHSpe48jg" target="_blank" class="btn">YouTube</a>
-    <a href="https://discord.gg/ZARVXqY6dM" target="_blank" class="btn">Discord</a>
+    <a href="#" class="btn">Twitter</a>
+    <a href="#" class="btn">YouTube</a>
+    <a href="#" class="btn">Discord</a>
   </div>
 </section>
 
-<section class="contact">
+<section class="contact" id="contact">
   <h2>CONTACT US</h2>
   <p>Have questions or feedback? Send us a message.</p>
 
